@@ -1,29 +1,26 @@
 <html>
+<style type="text/css">
+  body { background: grey !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
 
 <head>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 
-<body backgroung-color="black">
+<body background-color="black">
   <div>
     <div>
-      <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+      <nav class="navbar navbar-inverse" role="navigation" style="padding-left:100px;">
         <ul class="nav navbar-nav">
-          <li><a href="/">Home</a></li>
+          <li><a class="navbar-brand">Flag Tag</a></li>
+          <li><a style="padding-left:50px" href="/">Home</a></li>
           <li class="active"><a href="/game">Game<span class="sr-only">(current)</span></a></li>
           <li><a href="/scoreboard">Score Board</a></li>
 
         </ul>
       </nav>
-    </div> <br />
-    <div class="jumbotron">
-      <p>
-        Put the contact details here!
-
-      </p>
-    </div>
-  </div>
+    </div> 
 </body>
 
 </html>
