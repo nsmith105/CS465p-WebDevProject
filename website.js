@@ -21,6 +21,10 @@ router.get("/scoreboard",function(req, res){
 router.get("/game",function(req, res){
   res.sendFile(path + "game.html");
 });
+
+router.get("/about",function(req, res){
+  res.sendFile(path + "about.html")
+})
   
 app.use("*",function(req, res){
   res.send("Error 404: Not Found!");
