@@ -6,14 +6,17 @@
 
   <title>FlagTag</title>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
   <style type="text/css">
     body {
@@ -32,13 +35,43 @@
       color: white;
     }
 
+    ul li {
+      list-style-type: none;
+      display: inline;
+      padding-left: 20px;
+      padding-right: 20px;
+      justify-content: center;
+      align-content: center;
+    }
+
+    img {
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+
+    .drop-zone {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      background: #878787;
+      color: white;
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
     .jumbotron {
       background-color: darkgray !important;
-      padding-top: 2px !important;
+      padding-top: 8px !important;
       padding-bottom: 2px !important;
       line-height: 1;
       color: white;
       font-weight: bolder;
+      align-content: center;
+      text-align: center;
       font-family: Georgia, 'Times New Roman', Times, serif
     }
 
@@ -49,60 +82,17 @@
       padding-top: 10px;
       padding-bottom: 10px;
     }
-
-    .dropbtn {
-      background-color: #808080;
-      color: white;
-      padding: 16px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .dropbtn:hover,
-    .dropbtn:focus {
-      background-color: #2980B9;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #2980B9;
-      min-width: 160px;
-      overflow: auto;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-
-    .dropdown a:hover {
-      background-color: #ddd;
-    }
-
-    .show {
-      display: block;
-    }
   </style>
   <script src="website.js"></script>
 </head>
 
+<!----------- Navbar ---------------->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/">
     <h3>FlagTag</h3>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
-    aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -122,7 +112,7 @@
 <br />
 
 
-<div class="jumbotron jumbotron-fluid shadow-sm p-3 mb-5 bg-white rounded">
+<div class="jumbotron jumbotron-fluid rounded">
   <div class="container">
     <h4>Let's Start!</h4>
   </div>
@@ -130,44 +120,85 @@
 
 
 <div class="jumbotron jumbotron-fluid shadow-sm p-3 mb-5 bg-white rounded">
-  <p class='lead'><br />Which country is represented by the follwowing flag?</p>
-  <ul class="flags">
-    <img id='Belgian flag' alt='BE' src="https://www.countryflags.io/be/flat/64.png">
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">Choose A Country</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="#bz">Belize</a>
-        <a href="#td">Chad</a>
-        <a href="#be">Belgium</a>
-      </div>
-    </div>
-
-    <script>
-      // When the user clicks on the button, toggle between hiding and showing the dropdown content
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
-      }
-    </script>
-
-  </ul>
-  <p class="d-flex justify-content-center">
-    <a href="/scoreboard" class="btn btn-lg btn-secondary">Get Score!</a>
+  <p class='lead' style='text-align: center'>
+    <br />Match the Country to the flag:
   </p>
-  </ul>
+  <div class="container">
+    <section class="drop-zone"></section>
+    <section class="drag-flag">
+      <ul class="flags">
+        <li>
+          <img id='Belgium' alt='BE' src="https://www.countryflags.io/be/flat/64.png">
+        </li>
+        <li>
+          <img id='Antartica' alt='AQ' src="https://www.countryflags.io/AQ/flat/64.png">
+        </li>
+        <li>
+          <img id='Bangladesh' alt='BD' src="https://www.countryflags.io/BD/flat/64.png">
+        </li>
+        <li>
+          <img id='Guatemala' alt='GT' src="https://www.countryflags.io/GT/flat/64.png">
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-------- GAME MECHANICS ------------>
+  <script type='text/javascript'>
+    let dragged;
+
+    function onDragOver(event) {
+      event.preventDefault();
+    }
+
+    function onDragLeave(event) {
+      event.taget.style.background = '';
+    }
+
+    function onDragStart(event) {
+      let tart = event.target;
+      if (target && taget.nodeName === 'IMG') {
+        dragged = target;
+        event.dataTransfer.setData('text', taget.id);
+        event.dataTransfer.dropEffect = 'move';
+        event.target.style.opacity = .3;
+      }
+    }
+    function onDragEnd(event) {
+      if (event.target && event.target.nodeName === 'IMG')
+        event.target.style.opacity = '';
+      dragged = null;
+    }
+
+    function onDragEnter(event) {
+      const target = event.target;
+      if (target) {
+        event.prevent.Default();
+        event.dataTransfer.dropEffect = 'move';
+        target.style.background = '#1f904e';
+      }
+    }
+    function onDrop(event) {
+      const target = event.target;
+      if (target) {
+        target.style.backgroundColor = '';
+        event.preventDefault();
+        dragged.parentNode.removeChild(dragged);
+        dragged.style.opacity = '';
+        target.appendChild(dragged);
+      }
+    }
+
+    const flags = document.querySelector('.flags');
+    const dropZone = document.querySelector('.drop-zone')
+    flags.addEventListener('dragstart', onDragStart);
+    flags.addEventListener('dragend', onDragEnd);
+    dropZone.addEventListener('drop', onDrop);
+    dropZone.addEventListener('dragenter', onDragEnter);
+    dropZone.addEventListener('dragleave', onDragLeave);
+    dropZone.addEventListener('dragover', onDragOver);
+  </script>
+
 </div>
 
 </html>
