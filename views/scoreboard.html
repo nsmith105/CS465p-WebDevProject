@@ -1,138 +1,133 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Flag Tag</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!---CDN Links-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <style type="text/css">
-        body {
-            background: grey !important;
-        }
+  <title>FlagTag</title>
 
-        h1,
-        h2,
-        h3,
-        h4 {
-            color: white;
-            text-align: center;
-        }
+  <!---CDN Links-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous" />
+  <style type="text/css">
+    body {
+      background: grey !important;
+    }
 
-        .avatar {
-            vertical-align: middle;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 1em;
-        }
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: white;
+      text-align: center;
+    }
 
-        .table {
-            margin-top: 20px;
-        }
+    .avatar {
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 1em;
+    }
 
-        .table thead {
-            background: #111;
-            color: #fff;
-        }
+    .table {
+      margin-top: 20px;
+    }
 
-        .table tr th,
-        .table tr td:nth-child(odd) {
-            text-align: center;
-        }
+    .table thead {
+      background: #111;
+      color: #fff;
+    }
 
-        .navbar {
-            background-image: url("http://localhost:3000/images/ball-shaped-black-and-white-blur-1249525.jpg");
-            background-size: 100%;
-            background-position: center;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-    </style>
-    <script src="website.js"></script>
+    .table tr th,
+    .table tr td:nth-child(odd) {
+      text-align: center;
+    }
+
+    .navbar {
+      background-image: url("http://localhost:3000/images/ball-shaped-black-and-white-blur-1249525.jpg");
+      background-size: 100%;
+      background-position: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  </style>
+  <script src="website.js"></script>
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/about">
-        <h3>Flag Tag</h3>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/game">Game</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/scoreboard">Scoreboard</a>
-            </li>
-            <li class="nav-item">
-                    <a class="nav-link" href="/about">About F.T.</a>
-            </li>
-        </ul>
-    </div>
+  <a class="navbar-brand" href="/About">
+    <h3>FlagTag</h3>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="/game">Game</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/scoreboard">Scoreboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 <br />
 <div class="container">
-    <h1>Leaderboard</h1>
+  <h1>Leaderboard</h1>
 </div>
 <script type="text/javascript">
-    $(function() {
-      var userids =
-        "3125964;7469625;8537370;8525793;8550389;8537351;7429009;8540694;8529267;8538329;8030256;8538080;8535715;8559510;8538112;8522223;8709661;7992142;8535690;8235600;8533138;8538605;8532460;8525172";
-      var num = userids.split(";").length;
-      $.getJSON(
-        "https://api.stackexchange.com/2.2/users/" +
-          userids +
-          "?order=desc&sort=reputation&site=stackoverflow",
-        function(data) {
-          for (var i = 0; i < num; i++) {
-            $("#socreboard tbody").append(
-              "<tr> <td>" +
-                (i + 1) +
-                "</td><td><img class='avatar' src='" +
-                data.items[i].profile_image +
-                "'/>" +
-                data.items[i].display_name +
-                "</td><td>" +
-                data.items[i].reputation +
-                "</td></tr>"
-            );
-          }
+  $(function() {
+    var userids =
+      "3125964;7469625;8537370;8525793;8550389;8537351;7429009;8540694;8529267;8538329;8030256;8538080;8535715;8559510;8538112;8522223;8709661;7992142;8535690;8235600;8533138;8538605;8532460;8525172";
+    var num = userids.split(";").length;
+    $.getJSON(
+      "https://api.stackexchange.com/2.2/users/" +
+      userids +
+      "?order=desc&sort=reputation&site=stackoverflow",
+      function(data) {
+        for (var i = 0; i < num; i++) {
+          $("#socreboard tbody").append(
+            "<tr> <td>" +
+            (i + 1) +
+            "</td><td><img class='avatar' src='" +
+            data.items[i].profile_image +
+            "'/>" +
+            data.items[i].display_name +
+            "</td><td>" +
+            data.items[i].reputation +
+            "</td></tr>"
+          );
         }
-      );
-    });
-    </script>
+      }
+    );
+  });
+</script>
 
 <div class="container">
-    <table id="socreboard" class="table striped">
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Username</th>
-                <th>Score</th>
-            </tr>
-        </thead>
-        <tbody>
+  <table id="socreboard" class="table striped">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Username</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
 
-        </tbody>
-    </table>
+    </tbody>
+  </table>
 </div>
 
 
