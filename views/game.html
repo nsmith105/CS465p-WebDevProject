@@ -18,6 +18,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 
+    <!-------DRAGGABLE CDN-------->
+    <!-- Entire bundle -->
+<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.6/lib/draggable.bundle.js"></script>
+
   <style type="text/css">
     body {
       background: grey !important;
@@ -33,34 +37,6 @@
 
     p {
       color: white;
-    }
-
-    ul li {
-      list-style-type: none;
-      display: inline;
-      padding-left: 20px;
-      padding-right: 20px;
-      justify-content: center;
-      align-content: center;
-    }
-
-    img {
-      cursor: pointer;
-      overflow: hidden;
-    }
-
-
-    .drop-zone {
-      position: relative;
-      width: 100px;
-      height: 100px;
-      overflow: hidden;
-      background: #878787;
-      color: white;
-      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-      align-items: center;
-      justify-content: center;
-      text-align: center;
     }
 
     .jumbotron {
@@ -81,6 +57,9 @@
       background-position: center;
       padding-top: 10px;
       padding-bottom: 10px;
+    }
+    li {
+      float: left;
     }
   </style>
   <script src="website.js"></script>
@@ -119,14 +98,11 @@
 </div>
 
 
-<div class="jumbotron jumbotron-fluid shadow-sm p-3 mb-5 bg-white rounded">
+<div class="jumbotron jumbotron-fluid">
   <p class='lead' style='text-align: center'>
     <br />Match the Country to the flag:
   </p>
-  <div class="container">
-    <section class="drop-zone"></section>
-    <section class="drag-flag">
-      <ul class="flags">
+      <ul class="flags" style="list-style: none; ">
         <li>
           <img id='Belgium' alt='BE' src="https://www.countryflags.io/be/flat/64.png">
         </li>
@@ -140,64 +116,21 @@
           <img id='Guatemala' alt='GT' src="https://www.countryflags.io/GT/flat/64.png">
         </li>
       </ul>
-    </section>
   </div>
 
-  <!-------- GAME MECHANICS ------------>
-  <script type='text/javascript'>
-    let dragged;
-
-    function onDragOver(event) {
-      event.preventDefault();
+  <script>
+    var ul = document.querySelector('ul.flags');
+    for (var i = ul.children.length; i >= 0; i--) {
+      ul.appendChild(ul.children[Math.random() * i | 0]);
     }
-
-    function onDragLeave(event) {
-      event.taget.style.background = '';
-    }
-
-    function onDragStart(event) {
-      let tart = event.target;
-      if (target && taget.nodeName === 'IMG') {
-        dragged = target;
-        event.dataTransfer.setData('text', taget.id);
-        event.dataTransfer.dropEffect = 'move';
-        event.target.style.opacity = .3;
-      }
-    }
-    function onDragEnd(event) {
-      if (event.target && event.target.nodeName === 'IMG')
-        event.target.style.opacity = '';
-      dragged = null;
-    }
-
-    function onDragEnter(event) {
-      const target = event.target;
-      if (target) {
-        event.prevent.Default();
-        event.dataTransfer.dropEffect = 'move';
-        target.style.background = '#1f904e';
-      }
-    }
-    function onDrop(event) {
-      const target = event.target;
-      if (target) {
-        target.style.backgroundColor = '';
-        event.preventDefault();
-        dragged.parentNode.removeChild(dragged);
-        dragged.style.opacity = '';
-        target.appendChild(dragged);
-      }
-    }
-
-    const flags = document.querySelector('.flags');
-    const dropZone = document.querySelector('.drop-zone')
-    flags.addEventListener('dragstart', onDragStart);
-    flags.addEventListener('dragend', onDragEnd);
-    dropZone.addEventListener('drop', onDrop);
-    dropZone.addEventListener('dragenter', onDragEnter);
-    dropZone.addEventListener('dragleave', onDragLeave);
-    dropZone.addEventListener('dragover', onDragOver);
   </script>
+
+  <!-------- GAME MECHANICS ------------>
+  <script>
+    import Draggable from '@shopify/draggable/src/Draggable/Draggable.js'
+
+  </script>
+      
 
 </div>
 
