@@ -3,24 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="website.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.6/lib/draggable.bundle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous" />
 
   <title>FlagTag</title>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-
-    <!-------DRAGGABLE CDN-------->
-    <!-- Entire bundle -->
-<script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.6/lib/draggable.bundle.js"></script>
 
   <style type="text/css">
     body {
@@ -37,6 +31,14 @@
 
     p {
       color: white;
+    }
+
+    a {
+      line-height: 1em;
+      display: inline-block;
+      text-decoration: none;
+      padding: 3px;
+      margin: 3px;
     }
 
     .jumbotron {
@@ -58,95 +60,119 @@
       padding-top: 10px;
       padding-bottom: 10px;
     }
-    ul.flags li {
-      float: left;
-      position: sticky;
-      padding-left: 10px;
+
+    .container {
+      display: block;
+    }
+
+    .center {
+      display: flex;
       justify-content: center;
+      align-items: center;
+    }
+
+    div.flags {
+      display: flex;
+      justify-content: center;
+      border: 1px solid #ccc;
+    }
+
+    div.flags flag {
+      width: 100%;
+      height: auto;
+    }
+
+    #drop {
+      display: block;
+      text-align: center;
+      border: 1px solid black;
+      height: 68px;
+      margin: 40px;
     }
   </style>
-  <script src="website.js"></script>
-</head>
-
-<!----------- Navbar ---------------->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">
-    <h3>FlagTag</h3>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
-    aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="/game">Game</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/scoreboard">Scoreboard</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<br />
-
-
-<div class="jumbotron jumbotron-fluid rounded">
-  <div class="container">
-    <h4>Let's Start!</h4>
-  </div>
-  <p class='lead' style='text-align: center'>
-      Match the flag to the country name:
-    </p>
-</div>
-
-
-      <ul class="flags" style="list-style: none;">
-        <li><img id='Belgium' alt='BE' src="https://www.countryflags.io/be/shiny/64.png"></li>
-        <li><img id='Antartica' alt='AQ' src="https://www.countryflags.io/AQ/shiny/64.png"></li>
-        <li><img id='Bangladesh' alt='BD' src="https://www.countryflags.io/BD/shiny/64.png"></li>
-        <li><img id='Guatemala' alt='GT' src="https://www.countryflags.io/GT/shiny/64.png"></li>
-        <li><img id='Iran' alt='IR' src="https://www.countryflags.io/IR/shiny/64.png"></li>
-        <li><img id='EU' alt='EU' src="https://www.countryflags.io/EU/shiny/64.png"></li>
-        <li><img id='Austrailia' alt='AU' src="https://www.countryflags.io/AU/shiny/64.png"></li>
-        <li><img id='Inida' alt='IN' src="https://www.countryflags.io/IN/shiny/64.png"></li>
-        <li><img id='Iraq' alt='IQ' src="https://www.countryflags.io/IQ/shiny/64.png"></li>
-        <li><img id='Norway' alt='NO' src="https://www.countryflags.io/NO/shiny/64.png"></li>
-        <li><img id='Vietnam' alt='VN' src="https://www.countryflags.io/VN/shiny/64.png"></li>
-        <li><img id='United States' alt='US' src="https://www.countryflags.io/US/shiny/64.png"></li>
-        <li><img id='Turkey' alt='TR' src="https://www.countryflags.io/TR/shiny/64.png"></li>
-        <li><img id='Morocco' alt='MA' src="https://www.countryflags.io/MA/shiny/64.png"></li>
-        <li><img id='Seychelles' alt='SC' src="https://www.countryflags.io/SC/shiny/64.png"></li>
-        <li><img id='Portugal' alt='PT' src="https://www.countryflags.io/PT/shiny/64.png"></li>
-        <li><img id='Russian Fed.' alt='RU' src="https://www.countryflags.io/RU/shiny/64.png"></li>
-        <li><img id='Sweeden' alt='SE' src="https://www.countryflags.io/MA/shiny/64.png"></li>
-        <li><img id='Paraguay' alt='PY' src="https://www.countryflags.io/PY/shiny/64.png"></li>
-        <li><img id='Poland' alt='PL' src="https://www.countryflags.io/PL/shiny/64.png"></li>
-        <li><img id='Nepal' alt='NP' src="https://www.countryflags.io/NP/shiny/64.png"></li>
-        <li><img id='Haiti' alt='HT' src="https://www.countryflags.io/HT/shiny/64.png"></li>
-        <li><img id='Icland' alt='IC' src="https://www.countryflags.io/IC/shiny/64.png"></li>
-        <li><img id='Hong Kong' alt='HK' src="https://www.countryflags.io/HK/shiny/64.png"></li>
-        <li><img id='Greenland' alt='GL' src="https://www.countryflags.io/GL/shiny/64.png"></li>
-        <li><img id='Guam' alt='GU' src="https://www.countryflags.io/GU/shiny/64.png"></li>
-        <li><img id='Ghana' alt='GH' src="https://www.countryflags.io/GH/shiny/64.png"></li>
-        <li><img id='Greece' alt='GR' src="https://www.countryflags.io/GR/shiny/64.png"></li>
-        <li><img id='France' alt='FR' src="https://www.countryflags.io/FR/shiny/64.png"></li>
-        <li><img id='Japan' alt='JP' src="https://www.countryflags.io/JP/shiny/64.png"></li>
-        <li><img id='RK' alt='KR' src="https://www.countryflags.io/KR/shiny/64.png"></li>
-        <li><img id='DPRK' alt='KP' src="https://www.countryflags.io/KP/shiny/64.png"></li>
-      </ul>
 
   <script>
-    var ul = document.querySelector('ul.flags');
-    for (var i = ul.children.length; i >= 0; i--) {
-      ul.appendChild(ul.children[Math.random() * i | 0]);
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
     }
   </script>
-      
+</head>
 
-</div>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+      <h3>FlagTag</h3>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/game">Game</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/scoreboard">Scoreboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <br />
+
+  <div class="jumbotron jumbotron-fluid rounded">
+    <div class="center">
+      <h4>Let's Start!</h4>
+    </div>
+    <p class='lead' style='text-align: center'>
+      Match the flag to the country name
+    </p>
+  </div>
+
+  <div class="flags">
+    <div class"center" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img id='Belgium' alt='BE' src="https://www.countryflags.io/be/shiny/64.png" draggable="true" ondragstart="drag(event)">
+    </div>
+  </div>
+
+  <div class="center">
+    <div class="container">
+      <div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)">
+        Country1
+      </div>
+      <div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)">
+        Country2
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)">
+        Country3
+      </div>
+      <div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)">
+        Country4
+      </div>
+    </div>
+  </div>
+
+  <div class="center">
+    <a href="/game" class="btn btn-lg btn-secondary">Next</a>
+    <a href="/scoreboard" class="btn btn-lg btn-secondary">Get Score</a>
+  </div>
+
+</body>
 
 </html>
