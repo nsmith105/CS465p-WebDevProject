@@ -29,7 +29,7 @@
 
     h4 {
       text-align: center;
-      font-size: 40px;
+      font-size: 30px;
       color: white;
       font-weight: bold;
       font-style: italic;
@@ -58,8 +58,11 @@
       padding-top: 10px;
       padding-bottom: 10px;
     }
-    li {
+    ul.flags li {
       float: left;
+      position: sticky;
+      padding-left: 10px;
+      justify-content: center;
     }
   </style>
   <script src="website.js"></script>
@@ -95,40 +98,52 @@
   <div class="container">
     <h4>Let's Start!</h4>
   </div>
+  <p class='lead' style='text-align: center'>
+      Match the flag to the country name:
+    </p>
 </div>
 
 
-<div class="jumbotron jumbotron-fluid">
-  <p class='lead' style='text-align: center'>
-    <br />Match the Country to the flag:
-  </p>
-      <ul class="flags" style="list-style: none; ">
-        <li>
-          <img id='Belgium' alt='BE' src="https://www.countryflags.io/be/flat/64.png">
-        </li>
-        <li>
-          <img id='Antartica' alt='AQ' src="https://www.countryflags.io/AQ/flat/64.png">
-        </li>
-        <li>
-          <img id='Bangladesh' alt='BD' src="https://www.countryflags.io/BD/flat/64.png">
-        </li>
-        <li>
-          <img id='Guatemala' alt='GT' src="https://www.countryflags.io/GT/flat/64.png">
-        </li>
+      <ul class="flags" style="list-style: none;">
+        <li><img id='Belgium' alt='BE' src="https://www.countryflags.io/be/shiny/64.png"></li>
+        <li><img id='Antartica' alt='AQ' src="https://www.countryflags.io/AQ/shiny/64.png"></li>
+        <li><img id='Bangladesh' alt='BD' src="https://www.countryflags.io/BD/shiny/64.png"></li>
+        <li><img id='Guatemala' alt='GT' src="https://www.countryflags.io/GT/shiny/64.png"></li>
+        <li><img id='Iran' alt='IR' src="https://www.countryflags.io/IR/shiny/64.png"></li>
+        <li><img id='EU' alt='EU' src="https://www.countryflags.io/EU/shiny/64.png"></li>
+        <li><img id='Austrailia' alt='AU' src="https://www.countryflags.io/AU/shiny/64.png"></li>
+        <li><img id='Inida' alt='IN' src="https://www.countryflags.io/IN/shiny/64.png"></li>
+        <li><img id='Iraq' alt='IQ' src="https://www.countryflags.io/IQ/shiny/64.png"></li>
+        <li><img id='Norway' alt='NO' src="https://www.countryflags.io/NO/shiny/64.png"></li>
+        <li><img id='Vietnam' alt='VN' src="https://www.countryflags.io/VN/shiny/64.png"></li>
+        <li><img id='United States' alt='US' src="https://www.countryflags.io/US/shiny/64.png"></li>
+        <li><img id='Turkey' alt='TR' src="https://www.countryflags.io/TR/shiny/64.png"></li>
+        <li><img id='Morocco' alt='MA' src="https://www.countryflags.io/MA/shiny/64.png"></li>
+        <li><img id='Seychelles' alt='SC' src="https://www.countryflags.io/SC/shiny/64.png"></li>
+        <li><img id='Portugal' alt='PT' src="https://www.countryflags.io/PT/shiny/64.png"></li>
+        <li><img id='Russian Fed.' alt='RU' src="https://www.countryflags.io/RU/shiny/64.png"></li>
+        <li><img id='Sweeden' alt='SE' src="https://www.countryflags.io/MA/shiny/64.png"></li>
+        <li><img id='Paraguay' alt='PY' src="https://www.countryflags.io/PY/shiny/64.png"></li>
+        <li><img id='Poland' alt='PL' src="https://www.countryflags.io/PL/shiny/64.png"></li>
+        <li><img id='Nepal' alt='NP' src="https://www.countryflags.io/NP/shiny/64.png"></li>
+        <li><img id='Haiti' alt='HT' src="https://www.countryflags.io/HT/shiny/64.png"></li>
+        <li><img id='Icland' alt='IC' src="https://www.countryflags.io/IC/shiny/64.png"></li>
+        <li><img id='Hong Kong' alt='HK' src="https://www.countryflags.io/HK/shiny/64.png"></li>
+        <li><img id='Greenland' alt='GL' src="https://www.countryflags.io/GL/shiny/64.png"></li>
+        <li><img id='Guam' alt='GU' src="https://www.countryflags.io/GU/shiny/64.png"></li>
+        <li><img id='Ghana' alt='GH' src="https://www.countryflags.io/GH/shiny/64.png"></li>
+        <li><img id='Greece' alt='GR' src="https://www.countryflags.io/GR/shiny/64.png"></li>
+        <li><img id='France' alt='FR' src="https://www.countryflags.io/FR/shiny/64.png"></li>
+        <li><img id='Japan' alt='JP' src="https://www.countryflags.io/JP/shiny/64.png"></li>
+        <li><img id='RK' alt='KR' src="https://www.countryflags.io/KR/shiny/64.png"></li>
+        <li><img id='DPRK' alt='KP' src="https://www.countryflags.io/KP/shiny/64.png"></li>
       </ul>
-  </div>
 
   <script>
     var ul = document.querySelector('ul.flags');
     for (var i = ul.children.length; i >= 0; i--) {
       ul.appendChild(ul.children[Math.random() * i | 0]);
     }
-  </script>
-
-  <!-------- GAME MECHANICS ------------>
-  <script>
-    import Draggable from '@shopify/draggable/src/Draggable/Draggable.js'
-
   </script>
       
 
